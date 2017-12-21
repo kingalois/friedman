@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Data
+Bundle-SymbolicName: at.am.friedman.designer.data
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: muehleder
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.swt,
+ at.am.friedman.data,
+ org.eclipse.ui.ide,
+ org.junit
+Export-Package: at.am.friedman.designer

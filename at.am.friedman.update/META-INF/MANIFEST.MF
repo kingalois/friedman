@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Update
+Bundle-SymbolicName: at.am.friedman.update
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui.workbench,
+ org.eclipse.core.runtime;bundle-version="3.11.0",
+ at.am.common.logging;bundle-version="1.0.0"
+Import-Package: at.am.friedman.commons.utils
+Export-Package: at.am.friedman.update.shared

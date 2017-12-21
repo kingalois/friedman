@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: at.am.friedman.test
+Bundle-Version: 1.0.0
+Bundle-Vendor: Alois Muehleder
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.junit,
+ at.am.friedman.data;bundle-version="1.0.0",
+ org.eclipse.swt,
+ at.am.friedman.gui,
+ at.am.common.logging;bundle-version="1.0.0"

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_48sd0DtBEeSE5evNClOzeA" elementId="org.eclipse.e4.ide.application" bindingContexts="_iDkekHmKEeSWmrh58NiJTQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_48sd0TtBEeSE5evNClOzeA" selectedElement="_48sd8DtBEeSE5evNClOzeA" label="Friedhof Manager" width="500" height="400">
+    <tags>shellMaximized</tags>
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_48sd8DtBEeSE5evNClOzeA">
+      <children xsi:type="advanced:Perspective" xmi:id="_48sd8TtBEeSE5evNClOzeA">
+        <children xsi:type="basic:PartStack" xmi:id="_i0tRIK7_EeSuCMz8QiqLnQ" elementId="at.am.friedman.gui.partstack.0" containerData="100">
+          <children xsi:type="basic:Part" xmi:id="_dvFyIDtDEeSE5evNClOzeA" elementId="at.am.friedman.gui.part.graveoverviewtable" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.parts.GraveDrawingOverview" label="Gräber(Karte)"/>
+          <children xsi:type="basic:Part" xmi:id="_MqitAGn0EeWfGuX7mLs0tA" elementId="at.am.friedman.gui.part.grabbesitzertabelle" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.parts.GraveOwnerOverview" label="Grabbesitzer(Tabelle)"/>
+          <children xsi:type="basic:Part" xmi:id="_TmeiYD2_EeSUQYsXQ_vxxA" elementId="" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.parts.GraveOverview" label="Gräber(Tabelle)"/>
+          <children xsi:type="basic:Part" xmi:id="_8UrOYD5DEeSQWsexBXvcZQ" elementId="" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.parts.DiedPersonOverview" label="Verstorbene(Tabelle)"/>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_KodM0MNpEeS5d_O11uNfww" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_TKBlQMNpEeS5d_O11uNfww" elementId="at.am.friedman.gui.menu.test1" label="Test1"/>
+    </mainMenu>
+    <trimBars xmi:id="_48sd9TtBEeSE5evNClOzeA">
+      <children xsi:type="menu:ToolBar" xmi:id="_48sd9jtBEeSE5evNClOzeA" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_D4h_oDkyEeWd68jsm9E55Q" elementId="at.am.friedman.gui.handledtoolitem.options" label="Optionen" iconURI="platform:/plugin/at.am.friedman.gui/icons/properties.gif" tooltip="Optionen" command="_1_wR8DkxEeWd68jsm9E55Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_kAV6cJHjEeWFNZgQf9Q5sg" elementId="at.am.friedman.gui.handledtoolitem.update" label="Update" command="_fMuacJHjEeWFNZgQf9Q5sg"/>
+      </children>
+    </trimBars>
+    <trimBars xmi:id="_rFffoKcVEeW2CdYdMUjQbg" elementId="at.am.friedman.gui.trimbar.0" side="Bottom">
+      <children xsi:type="menu:ToolControl" xmi:id="_s63F0KcVEeW2CdYdMUjQbg" elementId="at.am.friedman.gui.toolcontrol.0" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.toolcontrol.StatusToolControl"/>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_48sd3TtBEeSE5evNClOzeA" elementId="at.am.friedman.gui.handler.deleteGraveOwnerCommand" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.DeleteGraveOwnerHandler" command="_48sd3DtBEeSE5evNClOzeA"/>
+  <handlers xmi:id="_48sd4TtBEeSE5evNClOzeA" elementId="at.am.friedman.gui.handler.at.am.friedman.gui.handler.editGraveOwner" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.EditGraveOwnerHandler" command="_48sd4DtBEeSE5evNClOzeA"/>
+  <handlers xmi:id="_48sd5DtBEeSE5evNClOzeA" elementId="at.am.friedman.gui.handler.createGraveOwner" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.AddGraveOwnerHandler" command="_48sd4ztBEeSE5evNClOzeA"/>
+  <handlers xmi:id="_uAcLoD2yEeSUQYsXQ_vxxA" elementId="at.am.friedman.gui.handler.addGrave" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.AddGraveHandler" command="_FcHL4D2zEeSUQYsXQ_vxxA"/>
+  <handlers xmi:id="_QQQp8D2-EeSUQYsXQ_vxxA" elementId="at.am.friedman.gui.handler.editGrave" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.EditGraveHandler" command="_VE4PgD2-EeSUQYsXQ_vxxA"/>
+  <handlers xmi:id="_vl9n4D3GEeSUQYsXQ_vxxA" elementId="at.am.friedman.gui.handler.deleteGrave" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.DeleteGraveHandler" command="_2PlnQD3GEeSUQYsXQ_vxxA"/>
+  <handlers xmi:id="_vGG4ID4_EeSQWsexBXvcZQ" elementId="at.am.friedman.gui.handler.addDiedPerson" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.AddDiedPersonHandler" command="_gsrUcD4_EeSQWsexBXvcZQ"/>
+  <handlers xmi:id="_2fzpkD4_EeSQWsexBXvcZQ" elementId="at.am.friedman.gui.handler.editDiedPerson" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.EditDiedPersonHandler" command="_me2ucD4_EeSQWsexBXvcZQ"/>
+  <handlers xmi:id="_6Gh4oD4_EeSQWsexBXvcZQ" elementId="at.am.friedman.gui.handler.deleteDiedPerson" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.DeleteDiedPersonHandler" command="_ql3AED4_EeSQWsexBXvcZQ"/>
+  <handlers xmi:id="_GzSyMKz5EeSJStGt891uvw" elementId="at.am.friedman.gui.handler.doubleGrave" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.CreateEditDoubleGraveHandler" command="_8-WqcLOoEeS5Q8IKdHHUHA"/>
+  <handlers xmi:id="_omWIILOrEeSDLZeJDkPT2Q" elementId="at.am.friedman.gui.handler.0" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.DeleteMultiGraveHandler"/>
+  <handlers xmi:id="_la1ssMloEeSZ2ZRtc1xM5Q" elementId="at.am.friedman.gui.handler.gravedetailshandler" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.GraveDetailsHandler"/>
+  <handlers xmi:id="_slYCMDkxEeWd68jsm9E55Q" elementId="at.am.friedman.gui.handler.options" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.OpenOptionsHandler" command="_1_wR8DkxEeWd68jsm9E55Q"/>
+  <handlers xmi:id="_rimAYJHiEeWFNZgQf9Q5sg" elementId="at.am.friedman.gui.handler.update" contributionURI="bundleclass://at.am.friedman.gui/at.am.friedman.gui.handlers.UpdateHandler" command="_fMuacJHjEeWFNZgQf9Q5sg"/>
+  <bindingTables xmi:id="_uXAmIHmKEeSWmrh58NiJTQ" elementId="bindingTable" bindingContext="_iDkekHmKEeSWmrh58NiJTQ">
+    <bindings xmi:id="_bCnEYMNkEeS5d_O11uNfww" elementId="at.am.friedman.gui.keybinding.0"/>
+  </bindingTables>
+  <rootContext xmi:id="_iDkekHmKEeSWmrh58NiJTQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_lt9FoHmKEeSWmrh58NiJTQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_pVWqIHmKEeSWmrh58NiJTQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_48sd3DtBEeSE5evNClOzeA" elementId="at.am.friedman.gui.deleteGraveOwner" commandName="Grabbesitzer löschen"/>
+  <commands xmi:id="_48sd4DtBEeSE5evNClOzeA" elementId="at.am.friedman.gui.editGraveOwner" commandName="Grabbesitzer bearbeiten...."/>
+  <commands xmi:id="_48sd4ztBEeSE5evNClOzeA" elementId="at.am.friedman.gui.createGraveOwnerCommand" commandName="Neuen Grabbesitzer anlegen..." description=""/>
+  <commands xmi:id="_FcHL4D2zEeSUQYsXQ_vxxA" elementId="at.am.friedman.gui.addGrave" commandName="Grab hinzufügen"/>
+  <commands xmi:id="_VE4PgD2-EeSUQYsXQ_vxxA" elementId="at.am.friedman.gui.editGrave" commandName="Grab bearbeiten"/>
+  <commands xmi:id="_2PlnQD3GEeSUQYsXQ_vxxA" elementId="at.am.friedman.gui.deleteGrave" commandName="Grab löschen"/>
+  <commands xmi:id="_gsrUcD4_EeSQWsexBXvcZQ" elementId="at.am.friedman.gui.adddiedperson" commandName="Verstorbenen hinzufügen"/>
+  <commands xmi:id="_me2ucD4_EeSQWsexBXvcZQ" elementId="at.am.friedman.gui.editdiedperson" commandName="Verstorbenen bearbeiten"/>
+  <commands xmi:id="_ql3AED4_EeSQWsexBXvcZQ" elementId="at.am.friedman.gui.deletediedperson" commandName="Verstorbenen löschen"/>
+  <commands xmi:id="_8-WqcLOoEeS5Q8IKdHHUHA" elementId="at.am.friedman.gui.command.createEditDoubleGrave" commandName="Doppelgrab erzeugen/bearbeiten"/>
+  <commands xmi:id="_IbjGgLOpEeS5Q8IKdHHUHA" elementId="at.am.friedman.gui.command.deletDoubleGrave" commandName="Doppelgrab löschen"/>
+  <commands xmi:id="_1_wR8DkxEeWd68jsm9E55Q" elementId="at.am.friedman.gui.command.options" commandName="Optionen..."/>
+  <commands xmi:id="_fMuacJHjEeWFNZgQf9Q5sg" elementId="at.am.friedman.gui.command.update" commandName="Update"/>
+  <addons xmi:id="_48sd0jtBEeSE5evNClOzeA" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_48sd0ztBEeSE5evNClOzeA" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_GFUrAHmKEeSWmrh58NiJTQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_48sd1TtBEeSE5evNClOzeA" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_48sd1jtBEeSE5evNClOzeA" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_48sd1ztBEeSE5evNClOzeA" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_NgzlIHmKEeSWmrh58NiJTQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>

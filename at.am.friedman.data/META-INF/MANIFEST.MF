@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Data
+Bundle-SymbolicName: at.am.friedman.data;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Alois Muehleder
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: at.am.friedman.commons,
+ org.eclipse.core.runtime;bundle-version="3.11.1",
+ at.am.common.logging,
+ org.eclipse.ui;bundle-version="3.107.0"
+Export-Package: 
+ at.am.friedman.data.enums,
+ at.am.friedman.shared;uses:="at.am.friedman.data.enums,javax.swing.event"
+Bundle-ClassPath: extlibs/derby.jar,
+ extlibs/guava-17.0.jar,
+ .
+Bundle-Activator: at.am.friedman.data.DataActivator
+Bundle-ActivationPolicy: lazy
