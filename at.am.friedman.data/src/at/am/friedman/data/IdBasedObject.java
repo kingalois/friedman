@@ -1,18 +1,20 @@
 package at.am.friedman.data;
 
-
-public class HashableObject implements HashableObjectInterface {
+public final class IdBasedObject implements IdBasedObjectInterface {
 
 	private int id;
+
+	public static IdBasedObject of(int id) {
+		return new IdBasedObject(id);
+	}
+
+	private IdBasedObject(int id) {
+		this.id = id;
+	}
 
 	@Override
 	public int getId() {
 		return this.id;
-	}
-
-	@Override
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	@Override
@@ -31,7 +33,7 @@ public class HashableObject implements HashableObjectInterface {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		HashableObject other = (HashableObject) obj;
+		IdBasedObject other = (IdBasedObject) obj;
 		if (id != other.getId())
 			return false;
 		return true;

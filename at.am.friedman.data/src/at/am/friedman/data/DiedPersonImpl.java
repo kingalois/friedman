@@ -7,19 +7,25 @@ import org.eclipse.ui.IMemento;
 
 import at.am.friedman.commons.utils.Constants;
 import at.am.friedman.commons.utils.StringUtils;
+import at.am.friedman.data.Person.PersonBuilder;
 import at.am.friedman.data.enums.InternalPosition;
+import at.am.friedman.data.seriealizer.PersonSerializer;
 import at.am.friedman.shared.DiedPersonInterface;
 
-public class DiedPersonImpl extends AbstractPerson implements DiedPersonInterface {
+public class DiedPersonImpl implements DiedPersonInterface, IdBasedObjectInterface {
 
-	long deathday;
-	int internalPosition;
-	int graveId;
-	long DayOfInterment;
-	int age;
-	Collection<String> pictures = new HashSet<>();
+	private final Person person;
+	private final long deathday;
+	private final int internalPosition;
+	private final int graveId;
+	private final long DayOfInterment;
+	private final int age;
+	private final Collection<String> pictures = new HashSet<>();
+	private final String comment;
 
-	String comment;
+	private DiedPersonImpl(DiedPersonBuilder builder) {
+		this.person = Person.create(builder.personBuilder);
+	}
 
 	@Override
 	public long getDeathday() {
@@ -37,24 +43,6 @@ public class DiedPersonImpl extends AbstractPerson implements DiedPersonInterfac
 	public int getGraveId() {
 
 		return graveId;
-	}
-
-	@Override
-	public void setDeathday(long deathday) {
-		this.deathday = deathday;
-
-	}
-
-	@Override
-	public void setInternalPosition(int position) {
-		this.internalPosition = position;
-
-	}
-
-	@Override
-	public void setGraveId(int graveId) {
-		this.graveId = graveId;
-
 	}
 
 	@Override
@@ -80,24 +68,6 @@ public class DiedPersonImpl extends AbstractPerson implements DiedPersonInterfac
 	}
 
 	@Override
-	public void setAge(int age) {
-		this.age = age;
-
-	}
-
-	@Override
-	public void setDayOfInterment(long dayOfInterment) {
-		this.DayOfInterment = dayOfInterment;
-
-	}
-
-	@Override
-	public void setDescription(String description) {
-		this.comment = description;
-
-	}
-
-	@Override
 	public String getDescription() {
 		return comment;
 	}
@@ -116,12 +86,6 @@ public class DiedPersonImpl extends AbstractPerson implements DiedPersonInterfac
 
 	@Override
 	public void saveState(IMemento memento) {
-		/*
-		 * long deathday; int internalPosition; int graveId; long
-		 * DayOfInterment; int age;
-		 * 
-		 * String comment;
-		 */
 
 		IMemento diedPerson = memento.createChild("DiedPerson");
 		super.saveState(diedPerson);
@@ -140,6 +104,7 @@ public class DiedPersonImpl extends AbstractPerson implements DiedPersonInterfac
 
 	@Override
 	public void restoreState(IMemento memento) {
+		PersonSerializer personSerializer = new PersonSerializer();
 		super.restoreState(memento);
 		setDeathday(Long.parseLong(memento.getString("deathday")));
 		setDayOfInterment(Long.parseLong(memento.getString("dayofinterment")));
@@ -196,6 +161,62 @@ public class DiedPersonImpl extends AbstractPerson implements DiedPersonInterfac
 	public void removePicture() {
 		pictures.clear();
 
+	}
+
+	public class DiedPersonBuilder {
+
+		private PersonBuilder personBuilder;
+
+	}
+
+	@Override
+	public String getFullName() {
+		return person.getFullName();
+	}
+
+	@Override
+	public String getSurname() {
+		return person.getSurname();
+	}
+
+	@Override
+	public String getFirstName() {
+		return person.getFirstName();
+	}
+
+	@Override
+	public String getStreet() {
+		return person.getStreet();
+	}
+
+	@Override
+	public String getHouseNr() {
+		return person.getHouseNr();
+	}
+
+	@Override
+	public String getPostalCode() {
+		return person.getPostalCode();
+	}
+
+	@Override
+	public String getTown() {
+		return person.getTown();
+	}
+
+	@Override
+	public String getTelephon() {
+		return person.getTelephon();
+	}
+
+	@Override
+	public String getText() {
+		return person.getText();
+	}
+
+	@Override
+	public int getId() {
+		return person.getId();
 	}
 
 }

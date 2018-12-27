@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import at.am.friedman.commons.utils.Constants;
+import at.am.friedman.data.DiedPersonImpl.DiedPersonBuilder;
 import at.am.friedman.data.enums.GraveZone;
 import at.am.friedman.shared.CemeteryDataProviderInterface;
 import at.am.friedman.shared.CemeteryOptionsInterface;
@@ -38,7 +39,7 @@ public class DefaultDataProvider implements CemeteryDataProviderInterface {
 		dataAccessor = DataAccessorFactory.createDataAccessor();
 		dataAccessor.initDataAccessor();
 		options = CemeteryOptions.getInstance(Constants.OPTIONS_FILE);
-		dataChangeListener = new ArrayList<DataChangeListener>();
+		dataChangeListener = new ArrayList<>();
 
 	}
 
@@ -70,7 +71,7 @@ public class DefaultDataProvider implements CemeteryDataProviderInterface {
 
 	@Override
 	public ArrayList<GraveInterface> getGravesByOwner(GraveOwnerInterface owner) {
-		ArrayList<GraveInterface> ret = new ArrayList<GraveInterface>();
+		ArrayList<GraveInterface> ret = new ArrayList<>();
 		for (GraveInterface grave : getAllGraves()) {
 			if (grave.getOwnerId() == owner.getId()) {
 				ret.add(grave);
@@ -88,7 +89,7 @@ public class DefaultDataProvider implements CemeteryDataProviderInterface {
 	@Override
 	public void deleteGrave(GraveInterface grave) {
 		dataAccessor.deleteGrave(grave);
-		
+
 	}
 
 	private void notifyDataChangeListener(Collection<GraveInterface> graves) {
@@ -99,7 +100,7 @@ public class DefaultDataProvider implements CemeteryDataProviderInterface {
 
 	@Override
 	public DiedPersonInterface getNewDiedPerson() {
-		DiedPersonInterface ret = new DiedPersonImpl();
+		DiedPersonInterface ret = DiedPersonBuilder
 		ret.setId(dataAccessor.getMaxIdForDiedPerson());
 		return ret;
 	}
@@ -204,7 +205,7 @@ public class DefaultDataProvider implements CemeteryDataProviderInterface {
 	@Override
 	public List<DiedPersonInterface> getDiedPersonsForGrave(GraveInterface grave) {
 		List<DiedPersonInterface> ret = new ArrayList<>();
-		if(grave == null){
+		if (grave == null) {
 			return ret;
 		}
 		for (DiedPersonInterface diedPerson : getAllDiedPersons()) {
@@ -243,8 +244,8 @@ public class DefaultDataProvider implements CemeteryDataProviderInterface {
 	@Override
 	public void addOrUpdateMultiGrave(MultiGraveInterface mGrave) {
 		dataAccessor.saveMultiGrave(mGrave);
-		List<GraveInterface> graves = new ArrayList<GraveInterface>();
-		for(int id : mGrave.getGraveIds()){
+		List<GraveInterface> graves = new ArrayList<>();
+		for (int id : mGrave.getGraveIds()) {
 			graves.add(getGraveById(id));
 		}
 		notifyDataChangeListener(graves);
@@ -253,8 +254,8 @@ public class DefaultDataProvider implements CemeteryDataProviderInterface {
 	@Override
 	public void deleteMultiGrave(MultiGraveInterface mGrave) {
 		dataAccessor.deleteMultiGrave(mGrave);
-		List<GraveInterface> graves = new ArrayList<GraveInterface>();
-		for(int id : mGrave.getGraveIds()){
+		List<GraveInterface> graves = new ArrayList<>();
+		for (int id : mGrave.getGraveIds()) {
 			graves.add(getGraveById(id));
 		}
 		notifyDataChangeListener(graves);

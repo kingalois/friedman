@@ -1,8 +1,8 @@
 package at.am.friedman.shared;
 
-public interface PersonInterface extends SaveableObject, ComboLabelProvider, TableCellLabelProvider {
+import at.am.friedman.data.IdBasedObjectInterface;
 
-	int getId();
+public interface PersonInterface extends IdBasedObjectInterface, ComboLabelProvider, TableCellLabelProvider {
 
 	String getFullName();
 
@@ -10,32 +10,16 @@ public interface PersonInterface extends SaveableObject, ComboLabelProvider, Tab
 
 	String getFirstName();
 
-	void setSurname(String surname);
-
-	void setFirstName(String firstname);
-
-	void setId(int id);
-
-	void setStreet(String street);
-
 	String getStreet();
-
-	void setHouseNr(String houseNr);
 
 	String getHouseNr();
 
 	String getDetailText();
 
-	public String getPostalCode();
+	String getPostalCode();
 
-	public void setPostalCode(String postalCode);
+	String getTown();
 
-	public String getTown();
-
-	public void setTown(String town);
-
-	public void setTelephon(String telephon);
-
-	public String getTelephon();
+	String getTelephon();
 
 }

@@ -8,7 +8,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: at.am.friedman.commons,
  org.eclipse.core.runtime;bundle-version="3.11.1",
  at.am.common.logging,
- org.eclipse.ui;bundle-version="3.107.0"
+ org.eclipse.ui;bundle-version="3.107.0",
+ org.eclipse.jdt.annotation;bundle-version="2.0.100"
 Export-Package: 
  at.am.friedman.data.enums,
  at.am.friedman.shared;uses:="at.am.friedman.data.enums,javax.swing.event"

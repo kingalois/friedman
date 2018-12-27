@@ -8,7 +8,7 @@ import org.eclipse.ui.IMemento;
 import at.am.friedman.data.enums.MultiGravePosition;
 import at.am.friedman.shared.MultiGraveInterface;
 
-public class MultiGraveImpl extends HashableObject implements
+public class MultiGraveImpl extends IdBasedObject implements
 		MultiGraveInterface {
 
 	private final List<Integer> graveIds = new ArrayList<>();

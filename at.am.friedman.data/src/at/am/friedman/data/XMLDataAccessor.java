@@ -10,23 +10,24 @@ import java.util.logging.Logger;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.XMLMemento;
 
+import at.am.common.logging.LogFactory;
 import at.am.friedman.commons.utils.Constants;
+import at.am.friedman.data.seriealizer.DiedPersonSerializer;
 import at.am.friedman.shared.CemeteryMemento;
 import at.am.friedman.shared.DataAccessorInterface;
 import at.am.friedman.shared.DiedPersonInterface;
 import at.am.friedman.shared.GraveInterface;
 import at.am.friedman.shared.GraveOwnerInterface;
 import at.am.friedman.shared.MultiGraveInterface;
-import at.am.common.logging.LogFactory;
 
 public class XMLDataAccessor implements DataAccessorInterface, CemeteryMemento {
 
 	private final Logger log = LogFactory.makeLogger();
 
-	private final List<GraveOwnerInterface> allGraveOwner = new ArrayList<GraveOwnerInterface>();
-	private final List<GraveInterface> allGraves = new ArrayList<GraveInterface>();
-	private final List<DiedPersonInterface> allDiedPerson = new ArrayList<DiedPersonInterface>();
-	private final List<MultiGraveInterface> allMultiGraves = new ArrayList<MultiGraveInterface>();
+	private final List<GraveOwnerInterface> allGraveOwner = new ArrayList<>();
+	private final List<GraveInterface> allGraves = new ArrayList<>();
+	private final List<DiedPersonInterface> allDiedPerson = new ArrayList<>();
+	private final List<MultiGraveInterface> allMultiGraves = new ArrayList<>();
 
 	private final IDGenerator graveIdGenerator = new IDGenerator();
 	private final IDGenerator graveOwnerIdGenerator = new IDGenerator();
@@ -148,7 +149,7 @@ public class XMLDataAccessor implements DataAccessorInterface, CemeteryMemento {
 				grave.saveState(memento);
 			}
 			for (DiedPersonInterface p : getAllDiedPersons()) {
-				p.saveState(memento);
+				DiedPersonSerializer.serialize(p, memento);
 			}
 			for (GraveOwnerInterface o : getAllOwners()) {
 				o.saveState(memento);

@@ -5,7 +5,7 @@ import org.eclipse.ui.IMemento;
 import at.am.friedman.commons.utils.Constants;
 import at.am.friedman.shared.GraveOwnerInterface;
 
-public class GraveOwnerImpl extends AbstractPerson implements GraveOwnerInterface {
+public class GraveOwnerImpl extends Person implements GraveOwnerInterface {
 	@Override
 	public String getDetailText() {
 		StringBuilder builder = new StringBuilder();

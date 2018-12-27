@@ -7,7 +7,7 @@ import at.am.friedman.data.enums.GraveType;
 import at.am.friedman.data.enums.GraveZone;
 import at.am.friedman.shared.GraveInterface;
 
-public class GraveImpl extends HashableObject implements GraveInterface {
+public class GraveImpl extends IdBasedObject implements GraveInterface {
 
 	String row;
 	int ownerId;
